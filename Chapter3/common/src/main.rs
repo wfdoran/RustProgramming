@@ -64,9 +64,40 @@ fn int_types() {
     size__of(f);
 }
 
+fn numeric_ops() {
+    println!("{}", 5 + 10);
+    println!("{}", 95.5 - 4.3);
+    println!("{}", 4 * 30);
+    println!("{}", 56.7 / 32.2);
+    println!("{}", 43 % 5);
+}
+
+fn tuples() {
+    let tup : (i32, f64, u8) = (500, 6.4, 1);
+    println!("{:?}", tup);
+    type__of(tup);
+    println!("{} {} {}", tup.0, tup.1, tup.2);
+
+    let (_x,y,_z) = tup;
+    println!("y = {}", y);
+}
+
+fn arrays() {
+    let x = [1,2,3,4,5];
+    println!("{:?}", x);
+    println!("len of x = {}", x.len());
+    type__of(x);
+
+    let y = [3; 5];
+    println!("{:?}", y);
+}
+
 fn main() {
     mutable();
     constants();
     shadowing();
     int_types();
+    numeric_ops();
+    tuples();
+    arrays();
 }
